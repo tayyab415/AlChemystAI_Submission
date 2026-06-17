@@ -12,6 +12,8 @@ ASSIGNMENT.md    ← original Alchemyst assignment brief + protocol reference
 
 The chaos-mode recording is included at
 [`agent-console/docs/chaos-recording.mp4`](./agent-console/docs/chaos-recording.mp4).
+It is also available on YouTube:
+https://www.youtube.com/watch?v=7L2x-ZRiKEQ
 
 ## System at a glance
 

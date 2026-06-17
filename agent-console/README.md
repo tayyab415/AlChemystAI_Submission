@@ -148,7 +148,8 @@ only allows an `interrupted` UI state when `/log` contains an accepted `RESUME`.
 
 ## Chaos mode recording
 
-See the included MP4 at [`docs/chaos-recording.mp4`](./docs/chaos-recording.mp4).
+See the included MP4 at [`docs/chaos-recording.mp4`](./docs/chaos-recording.mp4)
+or the YouTube recording: https://www.youtube.com/watch?v=7L2x-ZRiKEQ.
 
 Final recording checklist:
 
