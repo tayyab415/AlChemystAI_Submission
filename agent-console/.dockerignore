@@ -1,0 +1,8 @@
+node_modules
+.next
+*.log
+.env
+.env*
+Dockerfile
+README.md
+docs/chaos-recording.mp4

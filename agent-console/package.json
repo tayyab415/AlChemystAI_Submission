@@ -1,0 +1,30 @@
+{
+  "name": "agent-console",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "cp -r .next/static .next/standalone/.next/static",
+    "start": "node .next/standalone/server.js",
+    "test": "vitest run lib",
+    "test:e2e:normal": "vitest run e2e/protocol.e2e.test.ts",
+    "test:e2e:chaos": "vitest run e2e/chaos.e2e.test.ts",
+    "test:e2e:reconnect": "vitest run e2e/reconnect.e2e.test.ts",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "next": "14.2.32",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.0",
+    "@types/react": "18.3.3",
+    "@types/react-dom": "18.3.0",
+    "@types/ws": "^8.18.1",
+    "typescript": "5.5.4",
+    "vitest": "2.1.9",
+    "ws": "^8.21.0"
+  }
+}

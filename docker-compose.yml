@@ -1,0 +1,33 @@
+services:
+  agent-server:
+    build:
+      context: ./agent-server
+    image: agent-server:local
+    command: ["--mode", "${AGENT_SERVER_MODE:-normal}"]
+    ports:
+      - "4747:4747"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:4747/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"
+        ]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  agent-console:
+    build:
+      context: ./agent-console
+      args:
+        NEXT_PUBLIC_AGENT_WS_URL: ws://127.0.0.1:4747/ws
+    image: agent-console:local
+    depends_on:
+      agent-server:
+        condition: service_healthy
+    environment:
+      NEXT_PUBLIC_AGENT_WS_URL: ws://127.0.0.1:4747/ws
+    ports:
+      - "3000:3000"

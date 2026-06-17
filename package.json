@@ -1,0 +1,21 @@
+{
+  "name": "alchemystai-submission",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "postinstall": "npm ci --prefix agent-console && npm ci --prefix agent-server",
+    "install:all": "npm ci --prefix agent-console && npm ci --prefix agent-server",
+    "build": "npm run build --prefix agent-console",
+    "start": "npm run start --prefix agent-console",
+    "test": "npm test --prefix agent-console",
+    "test:e2e:normal": "npm run test:e2e:normal --prefix agent-console",
+    "test:e2e:chaos": "npm run test:e2e:chaos --prefix agent-console",
+    "test:e2e:reconnect": "npm run test:e2e:reconnect --prefix agent-console",
+    "server:build": "npm run build --prefix agent-server",
+    "server:start": "npm run build --prefix agent-server && npm start --prefix agent-server",
+    "server:start:chaos": "npm run build --prefix agent-server && npm start --prefix agent-server -- --mode chaos",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up",
+    "docker:chaos": "AGENT_SERVER_MODE=chaos docker compose up --build"
+  }
+}
